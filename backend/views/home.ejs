@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HODLINFO</title>
+  </head>
+  <body>
+    <div class="text-center sm:text-left md:ml-6">
+      <h1 class="header">HODLINFO</h1>
+    </div>
+    <section class="top grid grid-rows-2 md:grid-rows-1 md:grid-cols-9 md:gap-1">
+      <div class="row-start-1 md:col-span-3 md:col-start-4 grid grid-cols-3 gap-1">
+      <button>INR ▼ </button>
+      <button>BTC ▼ </button>
+      <button>BUY BTC</button>
+    </div>
+      <div class="telegram md:row-start-1 row-start-2 md:col-start-9">
+        <button >Connect to telegram</button>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </section>
+    <main>
+      <section class="price-info grid grid-cols-6 gap-5">
+        <div>
+          <h3 class="text-lg md:text-3xl">0.96%</h3>
+          <p class="text-md md:text-2xl">5 Mins</p>
+        </div>
+        <div>
+          <h3 class="text-lg md:text-3xl">1%</h3>
+          <p class="text-md md:text-2xl">1 Hour</p>
+        </div>
+        <div class="col-span-2">
+          <span class="best text-lg md:text-2xl">Best Price to Trade</span>
+          <h2 class="text-2xl md:text-7xl">₹35,90,937</h2>
+          <p class="text-lg md:text-2xl">
+            Average BTC/INR net price including commission
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg md:text-3xl">5.92%</h3>
+          <p class="text-md md:text-2xl">1 Day</p>
+        </div>
+        <div>
+          <h3 class="text-lg md:text-3xl">9.59%</h3>
+          <p class="text-md md:text-2xl">7 Days</p>
+        </div>
+      </section>
+
+      <section class="exchanges">
+        <table>
+          <thead class="text-sm md:text-2xl">
+            <tr>
+              <th>#</th>
+              <th>Platform</th>
+              <th>Last Traded Price</th>
+              <th>Buy / Sell Price</th>
+              <th>Difference</th>
+              <th>Savings</th>
+            </tr>
+          </thead>
+          <tbody class="tbody text-md md:text-3xl">
+            <% top10Data.forEach((data,index) => { %>
+                <div>
+                  <tr class="row-border">
+                    <td><%= index +1 %></td>
+                    <td><%= data.name %></td>
+                    <td >₹ <%= data.last %></td>
+                    <td class="w-1">₹<%=data.buy  %>/₹<%= data.sell %></td>
+                    <td><%= data.volume %> %</td>
+                    <td >▼ ₹ <%= data.base_unit  %></td>
+                  </tr>
+                </div>
+                <%  }); %> 
+          </tbody>
+        </table>
+      </section>
+      <section class="text-center">
+        <div class="btnnn"><button class="">Add hodlinfo to homescreen</button></div>
+      </section>
+    </main>
+  </body>
+</html>

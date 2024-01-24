@@ -25,7 +25,7 @@ app.get("/",async function(req,res){
 
     const data = await Ticker.find();
     const top10Data = data.slice(0, 10);
-    res.render("index",{ top10Data: top10Data });
+    res.render("home",{ top10Data: top10Data });
 });
 
 app.post("/",function(req,res){
